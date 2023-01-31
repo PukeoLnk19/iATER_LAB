@@ -1,0 +1,44 @@
+class User:
+    def __init__(self, name, email, password):
+        self.name = name
+        self.email = email
+        self.password = password
+
+
+        self.followingList = []
+        self.followerList = []
+
+    def follow(self, another_user, status):
+        if status == "following":
+            self.followingList.append(another_user)
+        elif status == "follower":
+            self.followerList.append(another_user)
+        else:
+            print("Invalid data!")
+
+    def numFollowing(self): 
+        return len(self.followingList)
+
+    def numFollower(self): 
+        return len(self.followerList)
+
+user1 = User("Young", "young@gmail.com", "12345")
+user2 = User("Yoonsoo", "yoonsoo@gmail.com", "12345")
+user3 = User("Taecho", "taecho@gmail.com", "12345")
+user4 = User("Lisa", "lisa@gmail.com", "12345")
+
+user1.follow(user1, "follower")
+user1.follow(user1, "following")
+user1.follow(user1, "follower")
+user1.follow(user1, "follower")
+
+
+user1.follow(user4, "following")
+user2.follow(user3, "follower")
+user3.follow(user2, "follower")
+user4.follow(user1, "following")
+
+print(user1.name, user1.numFollowing(), user1.numFollower())
+print(user2.name, user4.numFollowing(), user1.numFollower())
+print(user3.name, user1.numFollowing(), user4.numFollower())
+print(user4.name, user4.numFollowing(), user3.numFollower())

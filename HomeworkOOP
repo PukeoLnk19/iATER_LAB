@@ -1,0 +1,23 @@
+class SimpleCalculater:
+    @staticmethod
+    def add(first_number, second_number):
+        
+        return first_number+second_number
+    @staticmethod
+    def subtract(first_number, second_number):
+
+        return first_number-second_number
+    @staticmethod
+    def multiply(first_number, second_number):
+        
+        return first_number*second_number
+    @staticmethod
+    def divide(first_number, second_number):
+        
+        return first_number/second_number
+calculater = SimpleCalculater()
+
+print("first_number+second_number =",calculater.add(4, 5))
+print("first_number-second_number =",calculater.subtract(4, 5))
+print("first_number*second_number =",calculater.multiply(4, 5))
+print("first_number/second_number =",calculater.divide(4, 5))
